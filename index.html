@@ -9,20 +9,20 @@
 
 <body>
 
-  <header>
+  <header id="home">
     <h1 class="title">My Portfolio</h1>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Projects</a>
-      <a href="#">Skills</a>
-      <a href="#">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <div class="banner"></div>
 
-  <!-- Profile Section BELOW banner -->
-  <div class="profile-section">
+  <!-- Profile Section -->
+  <div class="profile-section" id="profile">
     <img src="images/photo.png" class="profile-photo" alt="My Photo">
     <h2>Your Name</h2>
     <p><strong>Role:</strong> Web Developer</p>
@@ -31,7 +31,7 @@
 
   <main>
 
-    <section class="sec2">
+    <section class="sec2" id="about">
       <h2>About Me</h2>
       <p>
         I am a passionate web developer skilled in HTML, CSS, JavaScript,
@@ -39,17 +39,22 @@
       </p>
     </section>
 
-    <section class="sec3">
+    <section class="sec3" id="projects">
       <h2>Projects</h2>
       <ul>
         <li>Weather App</li>
         <li>Typing Speed Tester</li>
         <li>3D Real Estate Application</li>
         <li>Time Zone World Clock</li>
+
+        <!-- Dummy projects added -->
+        <li>Portfolio Website (Dummy)</li>
+        <li>E-commerce UI (Dummy)</li>
+        <li>Blog Management System (Dummy)</li>
       </ul>
     </section>
 
-    <section class="sec4">
+    <section class="sec4" id="skills">
       <h2>Skills</h2>
       <div class="skill-list">
         <span>HTML</span>
@@ -60,11 +65,32 @@
       </div>
     </section>
 
+    <section class="sec5 contact-section" id="contact">
+      <h2>Contact Me</h2>
+
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Full Name</label>
+        <input aria-label="Full Name" type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email Address</label>
+        <input aria-label="Email Address" type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">Your Message</label>
+        <textarea aria-label="Message" id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
   </main>
 
   <footer>
-    &copy; 2025 My Portfolio
+    &copy; <span id="year"></span> My Portfolio
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 
